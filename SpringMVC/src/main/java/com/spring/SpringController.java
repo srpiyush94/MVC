@@ -17,7 +17,7 @@ public class SpringController {
 		
 	}
 	
-
+/* Example of sprig mvc*/
 	@RequestMapping(value="Welcome",method=RequestMethod.GET)
 	public String getWelcomePage(Model model)
 	{
