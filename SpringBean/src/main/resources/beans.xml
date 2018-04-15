@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+ 
+ <bean id="car" class=" com.demo.Car">
+<property name="fuleType" value="Petrol"></property>
+<property name="maxSpeed" value="60"></property> 
+</bean>
+<bean id="traveller" class="com.demo.Traveller">
+<property name="v" ref="car"></property>
+</bean>
+  		<!-- Address Bean Configuration 
+
+
+    <bean id="address" class="com.setter.Address">
+        <property name="street" value="Spring Office St." />
+        <property name="city" value="Columbus" />
+        <property name="state" value="OHIO" />
+        <property name="zipcode" value="43211" />
+    </bean>
+ -->
+		<!-- Employee Bean Configuration 
+ 
+    <bean id="employee" class="com.setter.Employee">
+        <property name="name" value="Mark"></property>
+        <property name="age" value="32"></property>
+        <property name="employeeCode" value="E10910"></property>
+        <property name="designation" value="Software Architect"></property>
+        <property name="address" ref="address"></property>
+    </bean>
+ 
+-->
+ 
+    <bean id="address" class="com.constructor.Address">
+        <constructor-arg name="street" value="Spring Office St."></constructor-arg>
+        <constructor-arg name="city" value="Columbus"></constructor-arg>
+        <constructor-arg name="state" value="OHIO"></constructor-arg>
+        <constructor-arg name="zipcode" value="43211"></constructor-arg>
+    </bean>
+
+
+
+ <bean id="employee" class="com.constructor.Employee">
+        <constructor-arg name="name" value="Mark"></constructor-arg>
+        <constructor-arg name="age" value="32"></constructor-arg>
+        <constructor-arg name="employeeCode" value="E10910"></constructor-arg>
+        <constructor-arg name="designation" value="Software Architect"></constructor-arg>
+        <constructor-arg>
+            <ref bean="address" />
+        </constructor-arg>
+    </bean>
+
+
+
+ 
+ </beans>
